@@ -1,0 +1,35 @@
+.dym-RadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dym-space-2);
+}
+
+.dym-Radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dym-space-2);
+}
+
+.dym-Radio-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--dym-color-brand-default);
+  cursor: pointer;
+}
+
+.dym-Radio-input:focus-visible {
+  outline: 2px solid var(--dym-color-border-focus);
+  outline-offset: 2px;
+}
+
+.dym-Radio-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dym-Radio-label {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-md);
+  color: var(--dym-color-text-primary);
+  cursor: pointer;
+}

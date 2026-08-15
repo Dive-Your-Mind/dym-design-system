@@ -1,0 +1,65 @@
+.dym-IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--dym-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--dym-motion-duration-fast) var(--dym-motion-easing-standard);
+}
+
+.dym-IconButton:focus-visible {
+  outline: 2px solid var(--dym-color-border-focus);
+  outline-offset: 2px;
+}
+
+.dym-IconButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dym-IconButton--sm {
+  width: 32px;
+  height: 32px;
+}
+.dym-IconButton--md {
+  width: 40px;
+  height: 40px;
+}
+.dym-IconButton--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.dym-IconButton--primary {
+  background-color: var(--dym-color-brand-default);
+  color: var(--dym-color-text-on-brand);
+}
+.dym-IconButton--primary:hover:not(:disabled) {
+  background-color: var(--dym-color-brand-hover);
+}
+
+.dym-IconButton--secondary {
+  background-color: var(--dym-color-bg-surface);
+  color: var(--dym-color-text-primary);
+  border-color: var(--dym-color-border-default);
+}
+.dym-IconButton--secondary:hover:not(:disabled) {
+  background-color: var(--dym-color-bg-subtle);
+}
+
+.dym-IconButton--ghost {
+  background-color: transparent;
+  color: var(--dym-color-text-primary);
+}
+.dym-IconButton--ghost:hover:not(:disabled) {
+  background-color: var(--dym-color-bg-subtle);
+}
+
+.dym-IconButton--danger {
+  background-color: transparent;
+  color: var(--dym-color-danger-default);
+}
+.dym-IconButton--danger:hover:not(:disabled) {
+  background-color: var(--dym-color-danger-subtle);
+}

@@ -1,0 +1,103 @@
+.dym-Toast-viewport {
+  position: fixed;
+  bottom: var(--dym-space-4);
+  right: var(--dym-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--dym-space-2);
+  width: 360px;
+  max-width: calc(100vw - var(--dym-space-8));
+  z-index: var(--dym-z-toast);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.dym-Toast {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: var(--dym-space-1) var(--dym-space-3);
+  background-color: var(--dym-color-bg-surface-raised);
+  border: 1px solid var(--dym-color-border-default);
+  border-radius: var(--dym-radius-md);
+  box-shadow: var(--dym-shadow-lg);
+  padding: var(--dym-space-3) var(--dym-space-4);
+  border-left: 3px solid var(--dym-color-border-default);
+}
+
+.dym-Toast--success {
+  border-left-color: var(--dym-color-success-default);
+}
+.dym-Toast--danger {
+  border-left-color: var(--dym-color-danger-default);
+}
+.dym-Toast--warning {
+  border-left-color: var(--dym-color-warning-default);
+}
+
+.dym-Toast-title {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-sm);
+  font-weight: var(--dym-font-weight-semibold);
+  color: var(--dym-color-text-primary);
+  grid-column: 1;
+}
+
+.dym-Toast-description {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-xs);
+  color: var(--dym-color-text-secondary);
+  grid-column: 1;
+}
+
+.dym-Toast-close {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background: transparent;
+  border: none;
+  color: var(--dym-color-text-secondary);
+  font-size: var(--dym-font-size-lg);
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dym-Toast-close:focus-visible {
+  outline: 2px solid var(--dym-color-border-focus);
+  outline-offset: 2px;
+}
+
+.dym-Toast[data-state="open"] {
+  animation: dym-slide-in var(--dym-motion-duration-normal) var(--dym-motion-easing-entrance);
+}
+
+.dym-Toast[data-state="closed"] {
+  animation: dym-fade-out-toast var(--dym-motion-duration-fast) var(--dym-motion-easing-exit);
+}
+
+@keyframes dym-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes dym-fade-out-toast {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dym-Toast[data-state="open"],
+  .dym-Toast[data-state="closed"] {
+    animation: none;
+  }
+}

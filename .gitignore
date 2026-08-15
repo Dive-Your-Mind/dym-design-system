@@ -1,0 +1,11 @@
+.claude/
+node_modules
+dist
+openspec
+storybook-static
+coverage
+src/theme/generated
+.DS_Store
+*.log
+.env
+.env.local

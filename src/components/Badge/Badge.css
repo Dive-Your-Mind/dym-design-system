@@ -1,0 +1,43 @@
+.dym-Badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-xs);
+  font-weight: var(--dym-font-weight-medium);
+  padding-top: var(--dym-space-1);
+  padding-bottom: var(--dym-space-1);
+  padding-left: var(--dym-space-2);
+  padding-right: var(--dym-space-2);
+  border-radius: var(--dym-radius-full);
+  line-height: var(--dym-font-line-height-tight);
+}
+
+.dym-Badge--default {
+  background-color: var(--dym-color-bg-subtle);
+  color: var(--dym-color-text-secondary);
+}
+
+.dym-Badge--brand {
+  background-color: var(--dym-color-brand-subtle);
+  color: var(--dym-color-brand-default);
+}
+
+.dym-Badge--success {
+  background-color: var(--dym-color-success-subtle);
+  color: var(--dym-color-success-text);
+}
+
+.dym-Badge--danger {
+  background-color: var(--dym-color-danger-subtle);
+  color: var(--dym-color-danger-text);
+}
+
+.dym-Badge--warning {
+  background-color: var(--dym-color-warning-subtle);
+  color: var(--dym-color-warning-text);
+}
+
+.dym-Badge--info {
+  background-color: var(--dym-color-info-subtle);
+  color: var(--dym-color-info-text);
+}

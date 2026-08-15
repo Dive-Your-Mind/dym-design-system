@@ -1,0 +1,41 @@
+/**
+ * Root stylesheet entry point. Every component's CSS must be reachable
+ * from this file's @import graph — this is the single closure that ships
+ * to consumers (see design.md, Decision 3).
+ *
+ * src/theme/generated/*.css are produced by `npm run build:tokens` from
+ * src/tokens/*.ts — do not hand-edit the generated files.
+ *
+ * Each component's CSS import is added here as the component is built.
+ */
+@import "./theme/generated/base.css";
+@import "./theme/generated/light.css";
+@import "./theme/generated/dark.css";
+
+@import "./components/Box/Box.css";
+@import "./components/Stack/Stack.css";
+@import "./components/Grid/Grid.css";
+@import "./components/Text/Text.css";
+@import "./components/Heading/Heading.css";
+@import "./components/Spinner/Spinner.css";
+@import "./components/Button/Button.css";
+@import "./components/IconButton/IconButton.css";
+@import "./components/Link/Link.css";
+@import "./components/internal/Field.css";
+@import "./components/Input/Input.css";
+@import "./components/TextArea/TextArea.css";
+@import "./components/Checkbox/Checkbox.css";
+@import "./components/Radio/Radio.css";
+@import "./components/Switch/Switch.css";
+@import "./components/Select/Select.css";
+@import "./components/Modal/Modal.css";
+@import "./components/Tooltip/Tooltip.css";
+@import "./components/Toast/Toast.css";
+@import "./components/Badge/Badge.css";
+@import "./components/Avatar/Avatar.css";
+
+.dym-ThemeRoot {
+  background-color: var(--dym-color-bg-canvas);
+  color: var(--dym-color-text-primary);
+  font-family: var(--dym-font-family-sans);
+}

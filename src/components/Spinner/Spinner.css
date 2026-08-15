@@ -1,0 +1,37 @@
+.dym-Spinner {
+  display: inline-block;
+  border-radius: var(--dym-radius-full);
+  border: 2px solid var(--dym-color-border-default);
+  border-top-color: var(--dym-color-brand-default);
+  animation: dym-spin var(--dym-motion-duration-slow) linear infinite;
+}
+
+.dym-Spinner--sm {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+
+.dym-Spinner--md {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.dym-Spinner--lg {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+}
+
+@keyframes dym-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dym-Spinner {
+    animation-duration: 1.2s;
+  }
+}

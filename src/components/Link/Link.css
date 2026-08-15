@@ -1,0 +1,23 @@
+.dym-Link {
+  color: var(--dym-color-brand-default);
+  font-family: var(--dym-font-family-sans);
+  text-decoration: none;
+}
+
+.dym-Link--underline-always {
+  text-decoration: underline;
+}
+
+.dym-Link--underline-hover:hover {
+  text-decoration: underline;
+}
+
+.dym-Link:hover {
+  color: var(--dym-color-brand-hover);
+}
+
+.dym-Link:focus-visible {
+  outline: 2px solid var(--dym-color-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--dym-radius-sm);
+}

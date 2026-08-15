@@ -1,0 +1,91 @@
+.dym-Select-trigger {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dym-space-2);
+  width: 100%;
+  height: 40px;
+  padding-left: var(--dym-space-3);
+  padding-right: var(--dym-space-3);
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-md);
+  color: var(--dym-color-text-primary);
+  background-color: var(--dym-color-bg-surface);
+  border: 1px solid var(--dym-color-border-default);
+  border-radius: var(--dym-radius-md);
+  cursor: pointer;
+}
+
+.dym-Select-trigger[data-placeholder] {
+  color: var(--dym-color-text-disabled);
+}
+
+.dym-Select-trigger:hover {
+  border-color: var(--dym-color-text-secondary);
+}
+
+.dym-Select-trigger:focus-visible {
+  outline: 2px solid var(--dym-color-border-focus);
+  outline-offset: 1px;
+  border-color: var(--dym-color-border-focus);
+}
+
+.dym-Select-trigger[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dym-Select-trigger--invalid {
+  border-color: var(--dym-color-danger-default);
+}
+
+.dym-Select-icon {
+  color: var(--dym-color-text-secondary);
+  display: inline-flex;
+}
+
+.dym-Select-content {
+  background-color: var(--dym-color-bg-surface-raised);
+  border: 1px solid var(--dym-color-border-default);
+  border-radius: var(--dym-radius-md);
+  box-shadow: var(--dym-shadow-lg);
+  z-index: var(--dym-z-dropdown);
+  overflow: hidden;
+}
+
+.dym-Select-viewport {
+  padding: var(--dym-space-1);
+}
+
+.dym-Select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dym-space-2);
+  padding-left: var(--dym-space-3);
+  padding-right: var(--dym-space-3);
+  height: 36px;
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-md);
+  color: var(--dym-color-text-primary);
+  border-radius: var(--dym-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.dym-Select-item[data-highlighted] {
+  background-color: var(--dym-color-brand-subtle);
+  color: var(--dym-color-brand-default);
+}
+
+.dym-Select-item[data-disabled] {
+  color: var(--dym-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.dym-Select-itemIndicator {
+  display: inline-flex;
+  color: var(--dym-color-brand-default);
+}

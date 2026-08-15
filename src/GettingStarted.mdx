@@ -1,0 +1,67 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting Started" />
+
+# @dym/design-system
+
+The base React design system for DYM (Dive Your Mind) products — shared design tokens, theming, and accessible React components.
+
+## Installation
+
+```bash
+pnpm add @dym/design-system react react-dom
+```
+
+Import the compiled stylesheet once, at your app's entry point:
+
+```ts
+import "@dym/design-system/styles.css";
+```
+
+## Theming
+
+Wrap your app (or the subtree that should be themed) in `ThemeProvider`. It defaults to following the OS `prefers-color-scheme` and applies the resolved theme via a `data-theme` attribute, which every component's CSS reads from:
+
+```tsx
+import { ThemeProvider, Button } from "@dym/design-system";
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Button>Click me</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+Pass `defaultPreference="light"` or `"dark"` to pin a theme instead of following the system setting. Use the theme toolbar control at the top of this Storybook to preview any component in both themes.
+
+## Using design tokens directly
+
+Every themable value — color, spacing, radius, shadow, typography, motion — is available as a CSS custom property, namespaced `--dym-*` (e.g. `--dym-color-brand-default`, `--dym-space-4`, `--dym-radius-md`). Reach for these directly when composing your own layout/styling around the library's components:
+
+```css
+.my-card {
+  padding: var(--dym-space-4);
+  border-radius: var(--dym-radius-md);
+  background-color: var(--dym-color-bg-surface);
+  box-shadow: var(--dym-shadow-md);
+}
+```
+
+Never hardcode a raw color or spacing value in a DYM product when a token exists for it — that's what keeps every product visually consistent and able to pick up brand/theme updates automatically.
+
+## Component structure
+
+Components are organized under **Foundations** (layout and typography primitives: `Box`, `Stack`, `Grid`, `Text`, `Heading`) and **Components** (everything else: actions, form controls, feedback, and overlays). Every component page includes a live example, an auto-generated prop table, and usage guidance for when (and when not) to reach for it.
+
+## Development
+
+```bash
+pnpm install
+pnpm build:tokens   # compile src/tokens/*.ts -> src/theme/generated/*.css
+pnpm storybook      # this playground, at localhost:6006
+pnpm test           # unit + accessibility tests
+pnpm build          # production build to dist/
+pnpm verify         # lint + typecheck + test + build (what CI runs)
+```

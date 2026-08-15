@@ -1,0 +1,51 @@
+name: Release
+
+# Publishes @dym/design-system via Changesets when changesets land on main.
+#
+# Requires an NPM_TOKEN secret with publish rights on the target registry
+# (see openspec/changes/base-react-design-system/design.md "Open Questions"
+# for the registry decision — npm org vs GitHub Packages). Until that's
+# resolved and the secret is set, this workflow's publish step will fail;
+# the version-PR step still works without it.
+
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify
+        run: pnpm verify
+
+      - name: Create release PR or publish
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

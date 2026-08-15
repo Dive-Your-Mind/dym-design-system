@@ -1,0 +1,30 @@
+.dym-Field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dym-space-1);
+}
+
+.dym-Field-label {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-sm);
+  font-weight: var(--dym-font-weight-medium);
+  color: var(--dym-color-text-primary);
+}
+
+.dym-Field-required {
+  color: var(--dym-color-danger-default);
+}
+
+.dym-Field-helper {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-xs);
+  color: var(--dym-color-text-secondary);
+  margin: 0;
+}
+
+.dym-Field-error {
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-xs);
+  color: var(--dym-color-danger-text);
+  margin: 0;
+}

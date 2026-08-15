@@ -1,0 +1,34 @@
+.dym-Tooltip-content {
+  background-color: var(--dym-color-bg-inverse);
+  color: var(--dym-color-text-inverse);
+  font-family: var(--dym-font-family-sans);
+  font-size: var(--dym-font-size-xs);
+  padding-top: var(--dym-space-1);
+  padding-bottom: var(--dym-space-1);
+  padding-left: var(--dym-space-2);
+  padding-right: var(--dym-space-2);
+  border-radius: var(--dym-radius-sm);
+  box-shadow: var(--dym-shadow-md);
+  z-index: var(--dym-z-tooltip);
+  max-width: 240px;
+  animation: dym-fade-in-tooltip var(--dym-motion-duration-fast) var(--dym-motion-easing-entrance);
+}
+
+.dym-Tooltip-arrow {
+  fill: var(--dym-color-bg-inverse);
+}
+
+@keyframes dym-fade-in-tooltip {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dym-Tooltip-content {
+    animation: none;
+  }
+}
