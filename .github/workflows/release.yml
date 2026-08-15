@@ -1,12 +1,10 @@
 name: Release
 
-# Publishes @dym/design-system via Changesets when changesets land on main.
-#
-# Requires an NPM_TOKEN secret with publish rights on the target registry
-# (see openspec/changes/base-react-design-system/design.md "Open Questions"
-# for the registry decision — npm org vs GitHub Packages). Until that's
-# resolved and the secret is set, this workflow's publish step will fail;
-# the version-PR step still works without it.
+# Publishes @dive-your-mind/dym-design-system to GitHub Packages via
+# Changesets when changesets land on main. Auth uses the repo's built-in
+# GITHUB_TOKEN (via the `packages: write` permission below) — no manual
+# secret needs to be configured, since GitHub Packages is scoped to this
+# same repo/org.
 
 on:
   push:
@@ -20,6 +18,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      packages: write
       id-token: write
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +33,8 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-          registry-url: "https://registry.npmjs.org"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@dive-your-mind"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -48,4 +48,4 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,20 +2,28 @@ import { Meta } from "@storybook/blocks";
 
 <Meta title="Getting Started" />
 
-# @dym/design-system
+# @dive-your-mind/dym-design-system
 
 The base React design system for DYM (Dive Your Mind) products — shared design tokens, theming, and accessible React components.
 
 ## Installation
 
+Published to [GitHub Packages](https://github.com/Dive-Your-Mind/dym-design-system/packages). Add to your project's `.npmrc`:
+
+```
+@dive-your-mind:registry=https://npm.pkg.github.com
+```
+
+Then install:
+
 ```bash
-pnpm add @dym/design-system react react-dom
+pnpm add @dive-your-mind/dym-design-system react react-dom
 ```
 
 Import the compiled stylesheet once, at your app's entry point:
 
 ```ts
-import "@dym/design-system/styles.css";
+import "@dive-your-mind/dym-design-system/styles.css";
 ```
 
 ## Theming
@@ -23,7 +31,7 @@ import "@dym/design-system/styles.css";
 Wrap your app (or the subtree that should be themed) in `ThemeProvider`. It defaults to following the OS `prefers-color-scheme` and applies the resolved theme via a `data-theme` attribute, which every component's CSS reads from:
 
 ```tsx
-import { ThemeProvider, Button } from "@dym/design-system";
+import { ThemeProvider, Button } from "@dive-your-mind/dym-design-system";
 
 function App() {
   return (

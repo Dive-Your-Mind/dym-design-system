@@ -1,4 +1,4 @@
-# @dym/design-system
+# @dive-your-mind/dym-design-system
 
 The base React design system for DYM (Dive Your Mind) products — shared design tokens, theming, and accessible React components.
 
@@ -6,20 +6,28 @@ The base React design system for DYM (Dive Your Mind) products — shared design
 
 ## Installation
 
+Published to [GitHub Packages](https://github.com/Dive-Your-Mind/dym-design-system/packages). Point npm/pnpm at the GitHub Packages registry for the `@dive-your-mind` scope — add to your project's `.npmrc`:
+
+```
+@dive-your-mind:registry=https://npm.pkg.github.com
+```
+
+Then install:
+
 ```bash
-pnpm add @dym/design-system react react-dom
+pnpm add @dive-your-mind/dym-design-system react react-dom
 ```
 
 Import the stylesheet once, at your app's entry point:
 
 ```ts
-import "@dym/design-system/styles.css";
+import "@dive-your-mind/dym-design-system/styles.css";
 ```
 
 ## Usage
 
 ```tsx
-import { ThemeProvider, Button, Stack, Text } from "@dym/design-system";
+import { ThemeProvider, Button, Stack, Text } from "@dive-your-mind/dym-design-system";
 
 function App() {
   return (
@@ -50,14 +58,14 @@ See `.design-sync/conventions.md` (once authored) or `openspec/changes/base-reac
 
 ## Release process
 
-This package uses [Changesets](https://github.com/changesets/changesets) for versioning.
+This package uses [Changesets](https://github.com/changesets/changesets) for versioning, publishing to GitHub Packages under the `Dive-Your-Mind` org.
 
 1. After making a change, run `pnpm changeset` and describe it (patch/minor/major).
 2. Commit the generated `.changeset/*.md` file with your PR.
 3. On merge to `main`, CI opens/updates a "Version Packages" PR aggregating pending changesets.
-4. Merging that PR triggers the release workflow, which builds and publishes the new version.
+4. Merging that PR triggers the release workflow, which builds and publishes the new version to `npm.pkg.github.com`.
 
-Publishing requires an `NPM_TOKEN` repo secret for the target registry — this isn't configured yet (see design.md's Open Questions for the registry decision). Until then, steps 1-3 work as normal; the workflow's publish step will fail at step 4.
+Publishing authenticates with the repo's built-in `GITHUB_TOKEN` (via the release workflow's `packages: write` permission) — no manual token setup needed.
 
 ## License
 

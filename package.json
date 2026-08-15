@@ -1,10 +1,17 @@
 {
-  "name": "@dym/design-system",
+  "name": "@dive-your-mind/dym-design-system",
   "version": "0.1.0",
   "description": "DYM (Dive Your Mind) base React design system — tokens, components, and theming shared across DYM products.",
   "type": "module",
   "license": "UNLICENSED",
   "packageManager": "pnpm@11.22.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dive-Your-Mind/dym-design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "engines": {
     "node": ">=20"
   },
