@@ -11,7 +11,7 @@ const meta: Meta<typeof Image> = {
     docs: {
       description: {
         component:
-          "Styled wrapper around the native `<img>` element for content images (photos, thumbnails, hero images). `alt` is required — pass `alt=\"\"` for a genuinely decorative image, otherwise describe the image's content. For a person/entity image with an initials fallback, use `Avatar` instead.",
+          'Styled wrapper around the native `<img>` element for content images (photos, thumbnails, hero images). `alt` is required — pass `alt=""` for a genuinely decorative image, otherwise describe the image\'s content. For a person/entity image with an initials fallback, use `Avatar` instead.',
       },
     },
   },
@@ -31,6 +31,9 @@ export const Default: Story = {
     alt: "A scenic placeholder photo",
     width: 400,
     height: 300,
+    shape: "rounded",
+    bordered: false,
+    block: false,
   },
 };
 
