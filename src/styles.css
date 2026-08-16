@@ -33,6 +33,7 @@
 @import "./components/Toast/Toast.css";
 @import "./components/Badge/Badge.css";
 @import "./components/Avatar/Avatar.css";
+@import "./components/Image/Image.css";
 
 .dym-ThemeRoot {
   background-color: var(--dym-color-bg-canvas);

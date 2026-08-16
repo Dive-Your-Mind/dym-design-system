@@ -1,0 +1,50 @@
+.dym-Image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dym-Image--fit-contain {
+  object-fit: contain;
+}
+.dym-Image--fit-cover {
+  object-fit: cover;
+}
+.dym-Image--fit-fill {
+  object-fit: fill;
+}
+.dym-Image--fit-none {
+  object-fit: none;
+}
+
+.dym-Image--shape-square {
+  border-radius: var(--dym-radius-none);
+}
+.dym-Image--shape-rounded {
+  border-radius: var(--dym-radius-md);
+}
+.dym-Image--shape-circular {
+  border-radius: var(--dym-radius-full);
+}
+
+.dym-Image--bordered {
+  border: 1px solid var(--dym-color-border-default);
+}
+
+.dym-Image--shadow-sm {
+  box-shadow: var(--dym-shadow-sm);
+}
+.dym-Image--shadow-md {
+  box-shadow: var(--dym-shadow-md);
+}
+.dym-Image--shadow-lg {
+  box-shadow: var(--dym-shadow-lg);
+}
+.dym-Image--shadow-xl {
+  box-shadow: var(--dym-shadow-xl);
+}
+
+.dym-Image--block {
+  display: block;
+  width: 100%;
+  height: auto;
+}
